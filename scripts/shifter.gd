@@ -2,10 +2,11 @@ extends Control
 
 @export var Point : RigidBody2D
 @export var Car : RigidBody3D
-
+@export var ResetPoint : Node2D
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Point.lock_rotation = true
+	Point.global_position = ResetPoint.global_position
 var movement : Vector2
 func _physics_process(delta: float) -> void:
 	if movement != Vector2.ZERO:

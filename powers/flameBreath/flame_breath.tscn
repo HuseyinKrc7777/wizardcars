@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcxhax66ab1lb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qt2eu"]
+points = PackedVector3Array(-0.0003401041, 1.2125, 0.2875, 1.73716, -1.2125, 0.2875, -0.0003401041, 1.2125, -0.2875, -1.7375, -1.2125, 0.2875, 1.73716, -1.2125, -0.2875, -1.7375, -1.2125, -0.2875)
+
+[sub_resource type="PrismMesh" id="PrismMesh_v38tr"]
+size = Vector3(3.475, 2.425, 0.575)
+
+[node name="FlameBreath" type="Node3D" unique_id=543401903]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1497198328]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1010453186]
+transform = Transform3D(-1, 8.940697e-08, 2.6645353e-15, 0, -4.371139e-08, 1, 8.940697e-08, 1, 4.3711385e-08, 0, -0.120296836, -1.670567)
+shape = SubResource("ConvexPolygonShape3D_qt2eu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=91000276]
+transform = Transform3D(-1, 8.940697e-08, 2.6645353e-15, 0, -4.371139e-08, 1, 8.940697e-08, 1, 4.3711385e-08, 0, -0.120296836, -1.670567)
+mesh = SubResource("PrismMesh_v38tr")

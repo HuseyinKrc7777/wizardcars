@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://t3qwf3ovbh5e"]
 
-[ext_resource type="Script" uid="uid://ca6dadfa8harh" path="res://scripts/trail_obj.gd" id="1_7vnv7"]
+[ext_resource type="Script" uid="uid://ca6dadfa8harh" path="res://powers/trail/trail_obj.gd" id="1_7vnv7"]
 [ext_resource type="CapsuleMesh" uid="uid://vakwgw33dl5o" path="res://new_capsule_mesh.tres" id="2_bdkxl"]
 [ext_resource type="Shape3D" uid="uid://b6cd3csm7vedk" path="res://new_capsule_shape_3d.tres" id="3_fn63s"]
 

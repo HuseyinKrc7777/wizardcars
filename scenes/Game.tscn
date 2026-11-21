@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://srdmoq8iwx5k"]
 
-[ext_resource type="PackedScene" uid="uid://cn7uf5f33whk6" path="res://scenes/shifter.tscn" id="1_5t4e2"]
-[ext_resource type="PackedScene" uid="uid://dq2hnmvfdtf4t" path="res://scenes/car.tscn" id="5_a6664"]
-[ext_resource type="Texture2D" uid="uid://hp5qw8uso665" path="res://road.png" id="7_umdqk"]
+[ext_resource type="PackedScene" uid="uid://dq2hnmvfdtf4t" path="res://scenes/car.tscn" id="1_cpr0p"]
+[ext_resource type="Texture2D" uid="uid://hp5qw8uso665" path="res://road.png" id="2_78awf"]
+[ext_resource type="PackedScene" uid="uid://cn7uf5f33whk6" path="res://scenes/shifter.tscn" id="3_s0nni"]
+[ext_resource type="PackedScene" uid="uid://ua604yfgr8ac" path="res://Enemies/enemy_spawner.tscn" id="4_78awf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,7 +21,7 @@ sky = SubResource("Sky_a202f")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4xowi"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[node name="Node3D" type="Node3D" unique_id=1454119405]
+[node name="Game" type="Node3D" unique_id=1454119405]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=996623512]
 environment = SubResource("Environment_noarx")
@@ -41,18 +42,21 @@ mesh = SubResource("PlaneMesh_56xj7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1464614786]
 shape = SubResource("ConcavePolygonShape3D_4xowi")
 
-[node name="Car" parent="." unique_id=2080958358 node_paths=PackedStringArray("shifter", "Camera") instance=ExtResource("5_a6664")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.758436, 0)
+[node name="Car" parent="." unique_id=2080958358 node_paths=PackedStringArray("shifter", "Camera") instance=ExtResource("1_cpr0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7367179, 0)
 shifter = NodePath("../Shifter")
 Camera = NodePath("../Camera3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=170149569]
 transform = Transform3D(40, 0, 0, 0, -1.7484556e-06, -40, 0, 40, -1.7484556e-06, 0, -0.76961625, -139.48416)
-texture = ExtResource("7_umdqk")
+texture = ExtResource("2_78awf")
 
-[node name="Shifter" parent="." unique_id=1435156013 node_paths=PackedStringArray("Car") instance=ExtResource("1_5t4e2")]
+[node name="Shifter" parent="." unique_id=1435156013 node_paths=PackedStringArray("Car") instance=ExtResource("3_s0nni")]
 offset_left = 0.46392822
 offset_top = -2.0
 offset_right = 12.519897
 offset_bottom = -2.0
 Car = NodePath("../Car")
+
+[node name="EnemySpawner" parent="." unique_id=1423223623 node_paths=PackedStringArray("Player") instance=ExtResource("4_78awf")]
+Player = NodePath("../Car")

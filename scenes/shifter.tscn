@@ -14,7 +14,7 @@ radius = 28.62
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_56xj7"]
 
-[node name="Shifter" type="Control" unique_id=1435156013 node_paths=PackedStringArray("Point")]
+[node name="Shifter" type="Control" unique_id=1435156013 node_paths=PackedStringArray("Point", "ResetPoint")]
 layout_mode = 3
 anchor_left = 0.66800004
 anchor_right = 0.99000007
@@ -24,6 +24,7 @@ offset_right = 11.519897
 mouse_filter = 2
 script = ExtResource("1_mydx2")
 Point = NodePath("Point")
+ResetPoint = NodePath("ResetPoint")
 
 [node name="Base" type="Sprite2D" parent="." unique_id=98431958]
 position = Vector2(231.20007, 255.8)
@@ -210,6 +211,9 @@ texture = ExtResource("4_r4jxl")
 position = Vector2(209.09087, 227.27267)
 scale = Vector2(1.3025566, 1.3080807)
 texture = ExtResource("5_str30")
+
+[node name="ResetPoint" type="Node2D" parent="." unique_id=743240377]
+position = Vector2(136, 227)
 
 [connection signal="body_entered" from="Base/ShiftAreas/Area2D1" to="." method="shiftEntered" binds= [1]]
 [connection signal="body_entered" from="Base/ShiftAreas/Area2D2" to="." method="shiftEntered" binds= [2]]
