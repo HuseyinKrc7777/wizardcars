@@ -1,0 +1,4 @@
+[gd_resource type="CapsuleShape3D" format=3 uid="uid://b6cd3csm7vedk"]
+
+[resource]
+resource_local_to_scene = true

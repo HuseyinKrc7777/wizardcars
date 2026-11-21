@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dq2hnmvfdtf4t"]
+
+[ext_resource type="Script" uid="uid://bwrpenrpdj36m" path="res://scripts/car.gd" id="1_50v30"]
+[ext_resource type="Texture2D" uid="uid://b2b41f2tnteri" path="res://stick.png" id="2_jtldb"]
+[ext_resource type="PackedScene" uid="uid://d0qu3brkvnrh4" path="res://powers/laser/laser.tscn" id="3_50v30"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
+albedo_texture = ExtResource("2_jtldb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_56xj7"]
+size = Vector3(1, 0.5391846, 2.2387085)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jka67"]
+points = PackedVector3Array(-0.48556328, -0.2696, -1.0660952, 0.4917368, 0.2696, 1.0907048, 0.48058558, -0.2696, 1.0660952, 0.4917368, 0.2696, -1.0907048, -0.4967145, 0.2696, 1.0907048, -0.4967145, 0.2696, -1.0907048, 0.48058558, -0.2696, -1.0660952, -0.48556328, -0.2696, 1.0660952)
+
+[node name="Car" type="RigidBody3D" unique_id=2080958358]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0, -0.5)
+script = ExtResource("1_50v30")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=771692175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23040771, 0.61935425)
+material_override = SubResource("StandardMaterial3D_i5arm")
+mesh = SubResource("BoxMesh_56xj7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1341461962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23040771, 0.61935425)
+shape = SubResource("ConvexPolygonShape3D_jka67")
+
+[node name="Laser" parent="." unique_id=1113722701 instance=ExtResource("3_50v30")]

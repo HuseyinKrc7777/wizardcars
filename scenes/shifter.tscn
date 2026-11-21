@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://cn7uf5f33whk6"]
+
+[ext_resource type="Script" uid="uid://bbyg57ysmwln3" path="res://scripts/shifter.gd" id="1_mydx2"]
+[ext_resource type="Texture2D" uid="uid://cf66gip46mtl7" path="res://base.png" id="2_str30"]
+[ext_resource type="Texture2D" uid="uid://b2b41f2tnteri" path="res://stick.png" id="3_2bn0d"]
+[ext_resource type="Texture2D" uid="uid://byl06h276xrnh" path="res://ball.png" id="4_r4jxl"]
+[ext_resource type="Texture2D" uid="uid://bhrutt6hduuu7" path="res://star.png" id="5_str30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56xj7"]
+size = Vector2(22.345642, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lx3re"]
+radius = 28.62
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_56xj7"]
+
+[node name="Shifter" type="Control" unique_id=1435156013 node_paths=PackedStringArray("Point")]
+layout_mode = 3
+anchor_left = 0.66800004
+anchor_right = 0.99000007
+anchor_bottom = 1.0
+offset_left = -0.5360718
+offset_right = 11.519897
+mouse_filter = 2
+script = ExtResource("1_mydx2")
+Point = NodePath("Point")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=98431958]
+position = Vector2(231.20007, 255.8)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_str30")
+
+[node name="Bounds" type="Node2D" parent="Base" unique_id=2034394706]
+position = Vector2(-14.545511, 5.454601)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Base/Bounds" unique_id=951180528]
+position = Vector2(-260.2692, -1082.4917)
+scale = Vector2(4.5454545, 4.5454545)
+collision_priority = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Bounds/StaticBody2D" unique_id=229069001]
+scale = Vector2(7.525, 17.33)
+shape = SubResource("RectangleShape2D_56xj7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Base/Bounds" unique_id=1495410502]
+position = Vector2(-260.26932, 832.3231)
+scale = Vector2(4.5454545, 4.5454545)
+collision_priority = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Bounds/StaticBody2D2" unique_id=651668459]
+scale = Vector2(7.525, 17.33)
+shape = SubResource("RectangleShape2D_56xj7")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Base/Bounds" unique_id=1656063512]
+position = Vector2(-1538.047, -104.71382)
+scale = Vector2(4.5454545, 4.5454545)
+collision_priority = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Bounds/StaticBody2D3" unique_id=1760958500]
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_56xj7")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Base/Bounds" unique_id=152014186]
+position = Vector2(991.5825, -130.63974)
+scale = Vector2(4.5454545, 4.5454545)
+collision_priority = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Bounds/StaticBody2D4" unique_id=829616267]
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_56xj7")
+
+[node name="InnerBounds" type="Node2D" parent="Base" unique_id=2018882552]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Base/InnerBounds" unique_id=12153760]
+position = Vector2(-460.00003, -291.8518)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base/InnerBounds/StaticBody2D" unique_id=679374085]
+position = Vector2(18.518518, -14.814815)
+polygon = PackedVector2Array(46.81, 0, 0, 177.215, -44.385, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Base/InnerBounds" unique_id=1772081723]
+position = Vector2(-326.6667, -291.8518)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base/InnerBounds/StaticBody2D2" unique_id=390341647]
+position = Vector2(18.518518, -14.814815)
+polygon = PackedVector2Array(46.81, 0, 0, 177.215, -44.385, 0)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Base/InnerBounds" unique_id=1576015997]
+position = Vector2(-189.62967, -295.5555)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base/InnerBounds/StaticBody2D3" unique_id=1795952309]
+position = Vector2(18.518518, -14.814815)
+polygon = PackedVector2Array(46.81, 0, 0, 177.215, -44.385, 0)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Base/InnerBounds" unique_id=2066759186]
+position = Vector2(-237.77785, 48.88891)
+rotation = 3.1343791
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base/InnerBounds/StaticBody2D4" unique_id=1043076859]
+position = Vector2(18.518518, -14.814815)
+polygon = PackedVector2Array(46.81, 0, 0, 177.215, -44.385, 0)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Base/InnerBounds" unique_id=1807989862]
+position = Vector2(-97.037125, 52.592613)
+rotation = 3.1343791
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base/InnerBounds/StaticBody2D5" unique_id=53133946]
+position = Vector2(18.518518, -14.814815)
+polygon = PackedVector2Array(46.81, 0, 0, 177.215, -44.385, 0)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Base/InnerBounds" unique_id=295620561]
+position = Vector2(-563.70374, -51.11108)
+rotation = 0.75650513
+scale = Vector2(4.835, 4.835)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base/InnerBounds/StaticBody2D6" unique_id=2062419260]
+position = Vector2(18.518518, -14.814815)
+polygon = PackedVector2Array(46.81, 0, 0, 177.215, -44.385, 0)
+
+[node name="ShiftAreas" type="Node2D" parent="Base" unique_id=1191434788]
+
+[node name="Area2D1" type="Area2D" parent="Base/ShiftAreas" unique_id=1875302994]
+position = Vector2(-360, -251.11108)
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D1" unique_id=1801302453]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2D2" type="Area2D" parent="Base/ShiftAreas" unique_id=529926301]
+position = Vector2(-356.29614, 4.444458)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D2" unique_id=1070811410]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2D3" type="Area2D" parent="Base/ShiftAreas" unique_id=564278403]
+position = Vector2(-234.07397, -240)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D3" unique_id=1606990120]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2D4" type="Area2D" parent="Base/ShiftAreas" unique_id=58934727]
+position = Vector2(-208.1482, 8.148193)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D4" unique_id=490235419]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2D5" type="Area2D" parent="Base/ShiftAreas" unique_id=1165408495]
+position = Vector2(-89.62964, -254.81482)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D5" unique_id=566607098]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2D6" type="Area2D" parent="Base/ShiftAreas" unique_id=835842423]
+position = Vector2(-74.8147, 15.555542)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D6" unique_id=1844106266]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2DR" type="Area2D" parent="Base/ShiftAreas" unique_id=333119726]
+position = Vector2(-489.62964, -243.70367)
+linear_damp_space_override = 1
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2DR" unique_id=725224992]
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Area2D7" type="Area2D" parent="Base/ShiftAreas" unique_id=509212330]
+position = Vector2(-474.8149, -114.07401)
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base/ShiftAreas/Area2D7" unique_id=1269435871]
+position = Vector2(133.33333, 3.7037036)
+scale = Vector2(17.514, 0.316)
+shape = SubResource("CircleShape2D_lx3re")
+
+[node name="Point" type="RigidBody2D" parent="." unique_id=2051523047]
+position = Vector2(172.00006, 233.00002)
+gravity_scale = 0.0
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Point" unique_id=232736080]
+scale = Vector2(0.395, 0.395)
+shape = SubResource("CircleShape2D_56xj7")
+
+[node name="Stick" type="Sprite2D" parent="Point" unique_id=1586006702]
+position = Vector2(111, 54)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("3_2bn0d")
+
+[node name="Ball" type="Sprite2D" parent="Point/Stick" unique_id=250055793]
+visible = false
+position = Vector2(204.54541, 472.7273)
+texture = ExtResource("4_r4jxl")
+
+[node name="Star" type="Sprite2D" parent="Point/Stick" unique_id=427350550]
+position = Vector2(209.09087, 227.27267)
+scale = Vector2(1.3025566, 1.3080807)
+texture = ExtResource("5_str30")
+
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D1" to="." method="shiftEntered" binds= [1]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D2" to="." method="shiftEntered" binds= [2]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D3" to="." method="shiftEntered" binds= [3]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D4" to="." method="shiftEntered" binds= [4]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D5" to="." method="shiftEntered" binds= [5]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D6" to="." method="shiftEntered" binds= [6]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2DR" to="." method="shiftEntered" binds= [-1]]
+[connection signal="body_entered" from="Base/ShiftAreas/Area2D7" to="." method="shiftEntered" binds= [0]]
