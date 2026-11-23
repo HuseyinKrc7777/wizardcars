@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c0l1kqpwykkpq"]
 
+[ext_resource type="Script" uid="uid://cv4kq4eftty15" path="res://powers/ram/ram.gd" id="1_lcnb3"]
+
 [sub_resource type="PrismMesh" id="PrismMesh_56xj7"]
 size = Vector3(1.885, 1.055, 0.765)
 
@@ -7,6 +9,7 @@ size = Vector3(1.885, 1.055, 0.765)
 points = PackedVector3Array(0, 0.5275, 0.3825, 0.9425, -0.5275, 0.3825, 0, 0.5275, -0.3825, -0.9425, -0.5275, 0.3825, 0.9425, -0.5275, -0.3825, -0.9425, -0.5275, -0.3825)
 
 [node name="Ram" type="Node3D" unique_id=329170712]
+script = ExtResource("1_lcnb3")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1563543401]
 

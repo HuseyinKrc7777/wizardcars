@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d0qu3brkvnrh4"]
 
+[ext_resource type="Script" uid="uid://bpwdpwj8vqpwl" path="res://powers/laser/laser.gd" id="1_brb6j"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_56xj7"]
 height = 20.0
 
@@ -7,6 +9,7 @@ height = 20.0
 height = 20.0
 
 [node name="Laser" type="Node3D" unique_id=1113722701]
+script = ExtResource("1_brb6j")
 
 [node name="LaserObject" type="Area3D" parent="." unique_id=1230117414]
 
@@ -17,3 +20,6 @@ mesh = SubResource("CapsuleMesh_56xj7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LaserObject" unique_id=1200369205]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.8872827e-07, -10.382475)
 shape = SubResource("CapsuleShape3D_5uox2")
+
+[connection signal="body_entered" from="LaserObject" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="LaserObject" to="." method="_on_area_3d_body_exited"]

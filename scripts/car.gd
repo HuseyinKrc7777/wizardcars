@@ -7,16 +7,20 @@ var health = 100
 var contactDamageVelocityMultiplier = 1.2
 var baseContactDamage = 10
 var Defense = 2
+var acceleration = 30
+
+@export var healthLabel : Label
 
 func _physics_process(delta: float) -> void:
 	var gear = shifter.CurrentGear
 	var movement = Input.get_axis("left","right")
 	var forward := -global_transform.basis.z
-	var value = 50
-	if(gear == gears.Reverse):
-		value*=-1/7
-	if  linear_velocity.length() >= (gear-1)*2 and linear_velocity.length() < gear*5 :
+	var value = acceleration
+	if  gear != gears.Reverse and linear_velocity.length() >= (gear-1)*2 and linear_velocity.length() < (gear+1)*3 :
 		apply_force(forward * value,forward)
+	elif gear == gears.Reverse and linear_velocity.length() < 7: 
+		apply_force(forward * value*-1,forward*-1)
+		
 	
 	angular_velocity.y = movement * 3 * -+1
 	pass
@@ -47,5 +51,5 @@ func _on_body_entered(body: Node) -> void:
 		var damage = baseContactDamage + speedDiff * contactDamageVelocityMultiplier
 		var recievedDamage = clamp(body.DealDamage(damage) - Defense,0,99)
 		health-=recievedDamage
-		print(health)
+		healthLabel.text = "%d"%health
 	pass # Replace with function body.

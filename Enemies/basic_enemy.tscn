@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx2rbkibxg3ep" path="res://Enemies/basic_enemy.gd" id="1_221se"]
 [ext_resource type="Texture2D" uid="uid://bhrutt6hduuu7" path="res://star.png" id="2_dvx36"]
+[ext_resource type="Script" uid="uid://btpqi0eh2tsgg" path="res://Enemies/label_3d.gd" id="3_gie15"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx3re"]
 albedo_texture = ExtResource("2_dvx36")
@@ -14,13 +15,19 @@ material = SubResource("StandardMaterial3D_lx3re")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_56xj7"]
 
-[node name="BasicEnemy" type="RigidBody3D" unique_id=2050726255 groups=["Enemy"]]
+[node name="BasicEnemy" type="RigidBody3D" unique_id=2050726255 node_paths=PackedStringArray("damageLabel") groups=["Enemy"]]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource("1_221se")
+damageLabel = NodePath("Label3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1319548825]
 mesh = SubResource("BoxMesh_56xj7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=331444446]
 shape = SubResource("BoxShape3D_56xj7")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=768214325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84788966, 0)
+font_size = 138
+script = ExtResource("3_gie15")

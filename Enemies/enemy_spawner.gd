@@ -29,7 +29,7 @@ func spawnEnemy(enemy,count : int) -> void:
 		var angle = randi_range(0,360)
 		#needed help here for direction calculation
 		var randomDirection = Vector3.RIGHT.rotated(Vector3.UP, angle)
-		var randomPosition = Player.global_position + randomDirection * 10.0
+		var randomPosition = Player.global_position+Player.linear_velocity*5 + randomDirection * 45.0
 
 		#var randomPosition = Player.global_position.
 		randomPosition.y = Player.position.y + 1
